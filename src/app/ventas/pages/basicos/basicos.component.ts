@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './basicos.component.html'
 })
 export class BasicosComponent {
+  api: string = 'https://angular.io/api/common/';
 
   nombreLower: string = "Alberto"
   nombreUpper: string = "ALBERTO"
