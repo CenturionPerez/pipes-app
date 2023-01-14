@@ -1,0 +1,78 @@
+<div class="text-layout">
+    <h1>Pipes decimales y porcentajes</h1>
+    <p>
+        Pipes incluídos en Angular - Usualmente en el Common Module.
+    </p>
+</div>
+<div class="grid">
+    <div class="col-4">
+        <p-card header="Ventas Netas"
+                subheader="Pipe number">
+                <ul>
+                    <p>ventasNetas | number: '1.2-2'</p>
+                    <li>
+                        "1. | ." representan coger toda la parte entera
+                    </li>
+                    <li>
+                        ".2-2" representa coger de 2 decimales hasta 2
+                    </li>
+                    <li>
+                        Ejemplo:
+                        <ul>
+                            <li>
+                                <i class="pi pi-dollar"></i>
+                                {{ventasNetas | number: '1.2-2'}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="Ventas Brutas"
+                subheader="Pipe currency">
+                <ul>
+                    <p>ventasNetas | currency:'€': symbol</p>
+                    <li>
+                        currency representa el tipo de moneda 
+                    </li>
+                    <li>
+                        symbol-narrow representa otro tipo de forma corta
+                    </li>
+                    <li>
+                        "1.0-4" representa coger la parte entera y de 0 hasta 4 digitos
+                    </li>
+                    <li>
+                        Ejemplo:
+                        <ul>
+                            <li>
+                                {{ventasNetas | currency:'USD':'symbol-narrow':'1.0-4'}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="Ventas porcentuales"
+                subheader="Pipe percent">
+                <ul>
+                    <p>porcentaje | percent:'1.2-2'</p>
+                    <li>
+                        percent representa el porcentaje del numero que indiquemos 
+                    </li>
+                    <li>
+                        "1.2-2" representa coger la parte entera y mostrar 2 digitos
+                    </li>
+                    <li>
+                        Ejemplo:
+                        <ul>
+                            <li>
+                                {{porcentaje | percent:'1.2-2'}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </p-card>
+    </div>
+</div>
