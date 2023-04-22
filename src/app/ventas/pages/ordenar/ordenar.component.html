@@ -1,1 +1,59 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+    <h1>Pipes personalizados</h1>
+    <p>
+        Pipes creados en Angular por {{ 'nosotros' | mayusculas:isActivateMayus }} mismos.
+    </p>
+</div>
+
+
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+
+    </div>
+    <div class="p-toolbar-group-end">
+        <button pButton (click)="activateMayus()"
+        class="m-1 p-button-warning">Toggle mayusculas</button>
+
+        <button pButton 
+        (click)="changeOrder('nombre')"
+        icon="pi pi-sort"
+        label="Por nombre"
+        class="m-1"></button>
+
+        <button pButton 
+        (click)="changeOrder('vuela')"
+        icon="pi pi-sort"
+        label="Valores"
+        class="m-1 p-button-success"></button>
+
+        <button pButton 
+        (click)="changeOrder('color')"
+        icon="pi pi-sort"
+        label="Por color"
+        class="m-1 p-button-danger"></button>
+
+        <div class="pi-grid">
+            <div class="pi-col m-5">
+                
+                <p-table [value]="heroes | sortByPipe: orderBy" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Vuela</th>
+                            <th>Color</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-heroe>
+                        <tr>
+                            <td>{{ heroe.nombre }}</td>
+                            <td>{{ heroe.vuela | vuela | titlecase }}</td>
+                            <td>{{ heroe.color }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+            </div>
+        </div>
+
+    </div>
+</p-toolbar>
